@@ -1,0 +1,50 @@
+© 2026 GIÁO.LÀNG
+
+o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+o_o_o_o_o_o_o_o                                                                                       o_o_o_o_o_o_o_o_o
+o_o_o_o_o_o_o_o            ⚛️ EXECUTION POLICY – CHẠY NPM TRONG POWERSHELL (WINDOWS)                 o_o_o_o_o_o_o_o_o
+o_o_o_o_o_o_o_o                                  © 2026 GIÁO.LÀNG                                     o_o_o_o_o_o_o_o_o
+o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+
+
+
+• Trong môi trường PowerShell (PS) trên Windows, npm chạy qua file npm.ps1, là 1 dạng script
+• PowerShell mặc định chặn script → npm bị lỗi
+
+🔴 Kiểm tra trước khi cấp quyền:
+>_ npm -v             ❌ báo lỗi không có quyền chạy
+
+
+
+**********************************************************************************************************************
+🟡 Cách 1 – Dùng tạm thời (terminal đang mở)                                             ****************************
+**********************************************************************************************************************
+>_ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+🔍 Ý nghĩa: bỏ qua kiểm tra policy chỉ trong phiên PowerShell hiện tại
+→ Không thay đổi cấu hình máy
+→ Đóng terminal là hết hiệu lực
+
+
+
+**********************************************************************************************************************
+🟢 Cách 2 – Dùng lâu dài (máy cá nhân)                                                  *****************************
+**********************************************************************************************************************
+>_ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+🔍 Ý nghĩa: cho user hiện tại chạy script nội bộ, script tải về phải có chữ ký
+→ Áp dụng cho user đang đăng nhập
+→ Chạy 1 lần, dùng mãi
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+✅ Kiểm tra sau khi cấp quyền:
+>_ npm -v                🟢 thông báo version hiện hành của npm, chạy script mlem
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+***********************************************************************************************************************
+                                  ✨ © 2026 GIÁO.LÀNG | Chúc bạn code React vui vẻ! ✨
+***********************************************************************************************************************

@@ -1,0 +1,278 @@
+© 2026 GIÁO.LÀNG
+
+MÌNH ĂN GÌ HÔM NAY?
+
+1. DẠO CHƠI 1 CHÚT, CHILL VỚI JAVASCRIPT (.JS) / TYPESCRIPT (.TS)
+2. DẠO CHƠI VỚI NODEJS
+3. LOCAL WEB SERVER (VITE)
+4. DEPLOY 1 TRANG WEB LÊN SERVER (SERVER FREE)
+...
+========================================
+I. JAVASCRIPT LÀ GÌ? (JS)
+- LÀ 1 NGÔN NGỮ LẬP TRÌNH, LÀ TẬP HỢP CÁC KEYWORD, CÂU LỆNH GIÚP TA XỬ LÍ, TÍNH TOÁN LOGIC CHO 1 VẤN ĐỀ 1 BÀI TOÁN NÀO ĐÓ
+- RA ĐỜI KHOẢNG 199X
+- MƯỢN KÉ TỪ "JAVA", CHỨ KO CÓ LIÊN HỆ HỌ HÀNG BÀ CON KẾ THỪA GÌ CẢ
+- JAVASCRIPT ĐC SINH RA, BAN ĐẦU, CHỈ ĐỂ LÀM APP CHẠY TRONG TRÌNH DUYỆT, VÀ NÓ DÙNG ĐỂ CHỈNH SỬA CONTENTS CỦA TRANG WEB, LÀM CHO HTML BỊ THAY ĐỔI, TRANG WEB CÓ THAY ĐỔI -> WEB ĐỘNG RỒI!!!
+  (WEB TĨNH THUẦN DỰA TRÊN HTML, MUỐN ĐỔI NỘI DUNG, MỞ HTML RA SỬA) 
+- JS SINH RA ĐỂ CHỈNH SỬA CÂY DOM - HTML TAG VÀ CONTENT ĐC LƯU TRONG RAM DƯỚI DẠNG CÂY - TREE HỌC TRONG MÔN CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT
+    
+-> MỌI TRÌNH DUYỆT ĐỀU CÓ SẴN BÊN TRONG 2 MODULE/ENGINE LỚN
+- ENGINE 1: HIỂU HTML, RENDER DOM, RENDER RA MÀN HÌNH CHO USER THẤY NỘI DUNG TRANG WEB VÀ MÀU SẮC
+- ENGINE 2: HIỂU CODE JS, THỰC THI LUÔN CODE JS, CODE NÀY CẬP NHẬT CÂY DOM, CÂY DOM ĐỔI, TRANG WEB TRƯỚC MẶT USER ĐỔI -> ENGINE NÀY GỌI LÀ JS RUNTIME!!!!!!!!!!
+   
+- MỖI HÃNG LÀM TRÌNH DUYỆT KHÁC NHAU, CÓ ENGINE KHÁC NHAU
+- CHROME, EDGE, COCOC: JS RUNTIME ĐC CHẾ BỞI GOOGLE, TÊN CỦA NÓ HIỆN NAY LÀ V8...
+  CHECK XEM VERSION JS RUNTIME CỦA GOOGLE:
+  TRONG URL CHROME GÕ: chrome://version
+  TRONG URL EDGE GÕ: edge://version
+
+- FIREFOX: JS RUNTIME TÊN LÀ SPIDERMONKEY
+- SAFARI (MACOS): JS RUNTIME TÊN LÀ JavaScriptCore
+
+-> MỖI NGÔN NGỮ LẬP TRÌNH SẼ TIẾN HOÁ THEO THỜI GIAN, TẬP LỆNH, BỘ THƯ VIỆN, TỪ VỰNG,... SẼ ĐC BỔ SUNG THÊM THEO THỜI GIAN
+
+GOOGLE, MICROSOFT, META, APPLE,... NGỒI VỚI NHAU, ĐỊNH RA NHỮNG TIÊU CHUẨN, CẢI TIẾN CẦN CÓ CHO JS
+-> HỘI NHÓM NÀY GỌI CHUNG TÊN LÀ HỘI ĐỒNG ECMA / ECMA SCRIPT (ES)
+     
+-> NĂM 2015, HỌP VỚI NHAU, ĐƯA NHIỀU MÓN MỚI VÀO TRONG NGÔN NGỮ JAVASCRIPT, VÀ JS 2015 ĐC GỌI TÊN LÀ: ES6, PHIÊN BẢN HUYỀN THOẠI
+-> ES 2017
+...
+
+-> ĐẶC TRƯNG CỦA JS LÀ KO KHAI KIỂU DỮ LIỆU, KO CẦN CHỈ ĐỊNH RÕ DATA TYPE CỦA VARIABLE/BIẾN
+VÍ DỤ: let x = 10;        //tự hiểu x là number, int, do căn theo value đưa cho nó
+       const y = 11;
+-> NGẦM ĐỊNH DATA TYPE / IMPLICIT-IMPLICITLY 
+-> DATA TYPE CỦA BIẾN SẼ ĐC TỰ SUY LUẬN DỰA THEO VALUE ĐƯA CHO BIẾN, TYPE INFERENCE
+
+-> SAU NÀY, NĂM 2012, MICROSOFT CẢI TIẾN THÊM, CHO PHÉP KHAI BÁO DATA TYPE CỦA BIẾN TƯỜNG MINH - EXPLICIT/EXPLICITY -> JS MỞ RỘNG NÀY GỌI LÀ TYPESCRIPT, -> FILE LƯU SOURCE CODE .TS
+VÍ DỤ: let x = 10;   //JS
+       let x: number = 10;   //Java:  int x = 10;
+
+-> MICROSOFT RELEASE LUÔN CÁI TRÌNH BIÊN DỊCH, CONVERT .TS THÀNH .JS -> CHƠI ĐC VỚI JS ENGINE
+   TÊN LÀ TSC (TYPESCRIPT COMPILER - JAVA ~~~ TRONG JDK:  JAVAC.EXE)
+  
+>>>>> NẾU MUỐN RUN CODE JS TRUYỀN THỐNG (CHẠY TRONG TRÌNH DUYỆT), CHỈ CẦN TRÌNH DUYỆT LÀ ĐỦ
+trang HTML
+<script>
+  //code JS here!!!
+</script>        
+ 
+II. NODEJS LÀ GÌ??? - NĂM 2009!!!!!!!!!!!!!!!!!!
+- LÀ JS ENGINE ĐC LÔI TỪ TRÌNH DUYỆT ĐEM RA NGOÀI, JS ENGINE CHẠY NGOÀI TRÌNH DUYỆT
+- NODEJS LÀ MÔI TRƯỜNG CHẠY CODE JS Ở NGOÀI TRÌNH DUYỆT, KO CÒN CÂY DOM, NHƯNG THOẢI MÁI GIAO TIẾP VỚI OS
+- V8 ĐEM RA NGOÀI, CHẠY TRÊN TERMINAL, GỌI LÀ NODEJS ENGINE
+- CÓ THÊM 1 LOẠT BỘ THƯ VIỆN JS BỔ SUNG CHO NODE: OS, FS, NETWORK, DB...
+  -> HAY DÙNG JS CHẠY TRÊN NODE KẾT HỢP CÁC BỘ THƯ VIỆN Ở TRÊN ĐỂ LÀM BACKEND, TOOL CHO SERVER
+   
+- KHI CÀI NODE (TỨC LÀ CÀI V8 ENGINE Ở NGOÀI TRÌNH DUYỆT) TA ĐC BONUS THÊM 2 TOOL - 2 APP NHO NHỎ (VIẾT = JS) TÊN LÀ NPM, VÀ NPX VÀ ĐÁM THƯ VIỆN OS, FS, NETWORK, DB... NÀY!!!
+ 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+- JS: LÀ NGÔN NGỮ LẬP TRÌNH LÀM APP CHẠY Ở 2 NƠI: TRONG TRÌNH DUYỆT, VÀ TRÊN OS TRỰC TIẾP (NODE)
+- MODULE HIỂU JS TRONG TRÌNH DUYỆT GỌI LÀ JS RUNTIME, TUỲ HÃNG
+- MODULE HIỂU JS, CHẠY Ở HĐH TRỰC TIẾP -> GỌI LÀ NODEJS
+- NODEJS LÀ JS ENGINE CHẠY CODE JS KO Ở TRONG TRÌNH DUYỆT, NÓ LÀ MÔI TRƯỜNG, SÂN KHẤU ĐỂ CÁC APP JS NGOÀI TRÌNH DUYỆT THI THỐ
+  NODEJS: SÀN LAZADA, SHOPEE, TIKI 
+  VITE, NPX, NPM, YARN, SURGE... LÀ CÁC APP JS: CÁC SỐP        
+
+- CẤM ĐC NÓI: NODEJS LÀ NGÔN NGỮ LẬP TRÌNH
+-----------------------------
+- NGÔN NGỮ LẬP TRÌNH -> GIÚP LÀM RA "APP" -> APP CHẠY Ở ĐÂU ĐÓ 
+  ĐÂU ĐÓ:
+  - CHẠY TRÊN MÔI TRƯỜNG ĐEN / TRẮNG / DÒNG LỆNH / TERMINAL / CMD SHELL
+    (CONSOLE APP), TƯƠNG TÁC VỚI APP BẰNG GÕ LỆNH TỪ BÀN PHÍM
+  - APP CÓ GUI - MÀN HÌNH ĐỒ HOẠ, DÙNG CHUỘT, CHẠY TRỰC TIẾP TRÊN NỀN DESKTOP
+  - CHẠY TRÊN MOBILE
+  - CHẠY TRONG 1 TRÌNH DUYỆT (BROWSER), APP PHẢI BỊ QUẢN LÍ "CHẬT CHỘI" TRONG MÀN HÌNH TRÌNH DUYỆT, "KO ĐC CAN THIỆP" VÀO HỆ ĐIỀU HÀNH - ĐẢM BẢO AN TOÀN CHO USER XÀI WEB (LỠ GÕ 1 URL HẤP DẪN, TẢI CODE VỀ, TRÌNH DUYỆT KO CHẶN CODE XẤU -> HƯ MÁY, LỘ INFO TRÊN Ổ ĐĨA) 
+  - ...  
+------------------------------
+
+III. CÀI ĐẶT NODEJS VÀ TYPESCRIPT
+- LÊN MẠNG TẢI, DOWNLOAD, CÀI VÀO C:\PROGRAM FILES\NODEJS
+- ĐƯỜNG DẪN NÀY NƠI NODEJS TOẠ LẠC, Ở, ĐỊNH CƯ, ĐÃ ĐC KHAI BÁO VÀO TRONG BIẾN MÔI TRƯỜNG PATH
+  GÕ ENV -> SYSTEM ENV -> PATH
+- CHECK VERSION CỦA NODEJS
+  - CMD, PS, TERMINAL, GÕ: node -v
+-                          npm -v
+-----------------------------------
+TS - TYPESCRIPT GIÚP CODE JAVASCRIPT RÕ RÀNG DỄ ĐỌC HƠN QUA VIỆC KHAI BÁO THÊM KIỂU DỮ LIỆU - DATA TYPE TƯỜNG MINH
+- CÀI THÊM TYPESCRIPT COMPILER ĐỂ HIỂU CÚ PHÁP MỞ RỘNG NÀY
+
+* NPM (ĐI KÈM KHI CÀI NODE) - NODE PACKAGE MANAGER
+- LÀ 1 TOOL, MÀ CODE CỦA TOOL NÀY CHÍNH LÀ JS, NPM ĐC VIẾT BẰNG JS
+- NÓ SẼ TRONG NODE, 1 SHOP TRÊN SÀN NODE
+- LÀ TOOL DÙNG ĐỂ QUẢN LÍ CÁC THƯ VIỆN JS CỦA DỰ ÁN MÌNH CÓ SỬ DỤNG
+- LÀ TOOL GIÚP MÌNH DOWNLOAD CÁC THƯ VIỆN
+- THƯ VIỆN TẢI VỀ ĐC GỌI LÀ PACKAGE, DEPENDENCY
+- CÓ VÀI CÁCH TẢI VÀ CÀI THƯ VIỆN JS VÀO MÁY, VÀO PROJECT CỦA MÌNH THÔNG QUA NPM
+
+*C1 - STYLE GLOBAL: TẢI THƯ VIỆN JS VỀ, MỌI NƠI TRÊN MÁY MÌNH, MỌI PROJECT ĐỀU XÀI ĐC THƯ VIỆN NÀY, TOOL NÀY -> CÁCH CÀI NÀY LÀ CÀI THEO STYLE GLOBAL
+gõ cài: npm i       --global <tên-package>          
+    npm install -g <tên-package>
+    npm install -g <tên-package>@số-version
+    npm install -g <tên-package>@latest
+
+    npm i -g typescript 
+
+gõ gỡ, uninstal: thay chữ i = r (remove)
+
+ĐỨNG Ở ĐÂU GÕ CX ĐC
+
+>>>>> CÀI THEO STYLE -g THÌ PACKAGE, TOOL, FILE .JS CỦA TOOL ĐC LƯU TRỮ Ở 
+C:\USERS\TÊN-LOGIN\APPDATA\ROAMMING\NPM\
+
+IV. CHẠY JS TRÊN NODEJS
+- CODE JS LƯU TRONG TẬP TIN CÓ ĐUÔI .JS
+- CODE TYPESCRIPT LƯU TRONG TẬP TIN CÓ ĐUÔI .TS
+- MÁY RUN CODE JS, TS (NGOÀI TRÌNH DUYỆT) NODE PHẢI ĐC CÀI, TYPESCRIPT PHẢI ĐC CÀI
+
+- GÕ Ở TERMINAL (CMD, POWERSHELL): node <tên-tập-tin-source-code.js-hoặc.ts>
+- LƯU Ý VERSION NODEJS: VER 22.18 UP GÕ LỆNH TRÊN OKIE!!!
+
+V. GIẢI NGỐ VỀ HÀM - FUNCTION TRONG JAVASCRIPT
+- HÀM LÀ 1 ĐƠN VỊ CODE, 1 NHÓM LỆNH, ĐƯỢC ĐẶT 1 TÊN GỌI, 1 NHÓM LỆNH ĐC ĐẶT TÊN, LÀM 1 HAY VÀI VIỆC GÌ ĐÓ, VÀ TRẢ VỀ GIÁ TRỊ NÀO ĐÓ QUA LỆNH RETURN
+- NẾU KO TRẢ VỀ GIÁ TRỊ - TA GỌI LÀ VOID, TA TRẢ VỀ KO GÌ CẢ  
+- GIÁ TRỊ TRẢ VỀ, CÓ THỂ LÀ 1 PRIMITIVE - GIÁ TRỊ ĐƠN LẺ: CON SỐ, CHỮ CÁI: 5 10 15, 3.14 'A' 'Z'
+- GIÁ TRỊ TRẢ VỀ, CÓ THỂ LÀ 1 THỨ PHỨC TẠP, DATA PHỨC TẠP, NHÌN VÀO DATA TRẢ VỀ THẤY CÓ NHIỀU THỨ BÊN TRONG HƠN - THỨ PHỨC TẠP GỌI LÀ OBJECT KÈM CÁC INFO BÊN TRONG KHI NHÌN VÀO OBJECT GỌI LÀ PROPERTY / ATTRIBUTE
+
+- CÚ PHÁP CƠ BẢN, TRUYỀN THỐNG CỦA HÀM TRONG JS
+
+function tênHàm(tham số nếu có, cách nhau bằng dấu phẩy nếu nhiều tham số) {
+  nhóm lệnh code bằng ngôn ngữ JS nằm ở đây; 
+  return giá-trị-trả-về; 
+}
+
+- CHO HÀM 1 NICK-NAME KHÁC
+
+const nick = function tênHàm(tham số nếu có, cách nhau bằng dấu phẩy nếu nhiều tham số) {
+  nhóm lệnh code bằng ngôn ngữ JS nằm ở đây; 
+  return giá-trị-trả-về; 
+}
+
+//nick là biến con trỏ, pointer, biến tham chiếu, reference variable, trỏ vào vùng ram nơi code của hàm đang nằm
+
+const nick1 = 2005; //biến primitive, 2005 nằm ngay trong vùng ram nick1
+
+---------------------------------
+BIẾN LÀ 1 VÙNG RAM ĐC ĐẶT TÊN, CHỨA VALUE
+- NẾU VALUE ĐƠN GIẢN 5 10 15 A B C -> 1 VÙNG RAM ON-OFF LÀ ĐỦ -> BIẾN PRIMITIVE 1 VÙNG RAM
+- NẾU VALUE PHỨC TẠP - OBJECT -> TỐN 2 VÙNG RAM
+                                     1 VÙNG BỰ CHỨA TOÀN BỘ INFO OBJECT
+                                     1 BIẾN THAM CHIẾU, CON TRỎ LƯU TOẠ ĐỘ TRỎ VÀO VÙNG NEW BỰ
+
+int yob = 2005; //Java   -> 1 vùng ram  
+const yob = 2005; //JS   -> 1 vùng ram
+
+Student s = new Student("SE01", "An Nguyên", 2005, 8.6);  //Java: 2 vùng ram
+            --------------------------------------------
+                    nhiều byte trong ram chứa info / state của object
+                    vùng object
+       --->
+       vùng ram con trỏ, biến con trỏ
+       lưu toạ độ object
+                 
+ 
+const teo = {"id": "SE01", "name": "An Nguyễn", "yob": 2005, "gpa": 8.6};
+      --  ------------------------------------------------------------
+     biến                     object, vùng object
+     tên gọi
+ 
+//JSON: JavaScript Object Notation - Cách biểu diễn 1 đối tượng, 1 info phức tạp theo phong cách cú pháp JS. Tự giải thích mà ko cần nói thêm - self explanation
+
+
+---------------------------------
+VIẾT THỬ HÀM THEO 2 STYLE
+
+function add(a, b) {                             //KHAI BÁO HÀM - DECLARATION A FUNCTION
+   return a + b;                                 //TUI HỨA SẼ TÍNH TOÁN THẾ NÀY NÈ
+}
+
+ 
+
+const xxx = function add(a, b) {                 //KHAI BÁO HÀM - DECLARATION A FUNCTION
+   return a + b;
+} 
+
+GỌI HÀM ĐỂ XÀI                                   //RUN, CALL, INVOKE A FUNCTION
+tênHàm() nếu hàm ko có tham số đầu vào, ko cần đưa đầu vào
+
+tênHàm(các giá trị đầu vào cụ thể nào đó, 5, 10, 15, A, OBJECT KHÁC, HÀM KHÁC)
+
+NẾU HÀM CÓ NICK THÌ 
+nick()   cũng là gọi hàm
+nick(các giá trị đầu vào...)
+
+=============================
+GIÁO.LÀNG' RULE
+- ĐỊNH LÝ DẤU BẰNG: Ở ĐÂU CÓ DẤU =, THÌ VẾ TRÁI VẾ PHẢI TƯƠNG ĐƯƠNG NHAU, THAY THẾ CHO NHAU
+=============================
+add(30, 70);  //100 trả về
+
+console.log(add(30, 70));
+
+xxx(30, 70); //định lý dấu bằng
+
+=========================================================
+- CHO HÀM 1 NICK-NAME KHÁC; LOẠI BỎ TÊN GỐC BAN ĐẦU; XÀI NICK ONLY
+const nick = function tênHàm(tham số nếu có, cách nhau bằng dấu phẩy nếu nhiều tham số) {
+  nhóm lệnh code bằng ngôn ngữ JS nằm ở đây; 
+  return giá-trị-trả-về; 
+}
+
+//ANONONYMOUS FUNCTION - HÀM KO CÓ TÊN GỐC, GỌI NÓ QUA NICK
+//NGOÀI ĐỜI: SẾP, SKY, SƠN-TÙNG MTP ->>>>>>>>>>>>>>>> TÊN GỐC NGUYỄN THANH TÙNG
+//           CHIPU                  ->>>>>>>>>>>>>>>> TÊN GỐC NGUYỄN THUỲ CHI
+
+const nick = function (tham số nếu có, cách nhau bằng dấu phẩy nếu nhiều tham số) {
+  nhóm lệnh code bằng ngôn ngữ JS nằm ở đây; 
+  return giá-trị-trả-về; 
+}
+
+nick();  //run hàm qua nick
+
+==============================================>
+HÀM MŨI TÊN - ARROW FUNCTION
+- ANONYMOUS ĂN BỚT THÊM VÀI KÍ TỰ -> TRỞ THÀNH HÀM MŨI TÊN
+
+//ANONYMOUS
+const nick = function (tham số nếu có, cách nhau bằng dấu phẩy nếu nhiều tham số) {
+  nhóm lệnh code bằng ngôn ngữ JS nằm ở đây; 
+  return giá-trị-trả-về; 
+}
+
+//ARROW =>    //JAVA ->   C# =>
+
+const nick = (tham số nếu có, cách nhau bằng dấu phẩy nếu nhiều tham số) => {
+  nhóm lệnh code bằng ngôn ngữ JS nằm ở đây; 
+  return giá-trị-trả-về; 
+}
+//HÀM BỊ ĂN BỚT CÁI TÊN GỐC, ĂN BỚT CHỮ FUNCTION, TÁCH THAM SỐ VÀ THÂN HÀM (BODY) BẰNG MŨI TÊN ĐÔI (JAVA MŨI TÊN ĐƠN ->) =>
+//HÀM ẨN DANH ĂN BỚT VÀI THỨ, GỌI LÀ HÀM MŨI TÊN 
+
+
+>>>>> KĨ THUẬT RÚT GỌN HÀM ẨN DANH TRỞ THÀNH HÀM MŨI TÊN, MŨI TÊN CHỈ CÒN CÁI DÂY NỊT - ĂN BỚT "KO ĂN ĐC THÊM"
+
+const nick = (các tham số hàm) => { code thân hàm - body of function, implement }
+ 
+1. ĂN BỚT PHẦN THAM SỐ
+- NẾU HÀM CÓ TỪ 2 THAM SỐ TRỞ LÊN, GIỮ NGUYÊN KO ĂN BỚT
+  VÍ DỤ (a, b) =>          (a, b, c)
+- NẾU HÀM CÓ ĐÚNG 1 THAM SỐ, DÙNG NGOẶC () HOẶC KO DÙNG ĐỀU OKIE 
+  (r) =>       r =>    
+ 
+  const f = r => { return 3.14 * r * r; } 
+
+2. ĂN BỚT PHẦN THÂN HÀM 
+- NẾU THÂN HÀM CÓ NHIỀU HƠN 1 DÒNG LỆNH, TỪ 2 LỆNH TRỞ LÊN, GIỮ NGUYÊN
+- NẾU THÂN HÀM CHỈ CÓ DUY NHẤT 1 LỆNH; THÌ BỎ CẶP NGOẶC NHỌN, BỎ LUÔN CẢ CHỮ RETURN;
+
+const f = r => { return 3.14 * r * r; } 
+
+const f = r => 3.14 * r * r;  //EXPRESSION HÀM TỰA NHƯ 1 BIỂU THỨC!!!
+
+>>>>> JAVA, C# CÙNG CÁCH THỨC!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+

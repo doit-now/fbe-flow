@@ -1,0 +1,42 @@
+© 2026 GIÁO.LÀNG
+
+o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+o_o_o_o_o_o_o_o_o_o_o_o_o_o_o                                                           o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+ o_o_o_o_o_o_o_o_o_o_o_o_o_o_o            ⚛️ THIẾT LẬP PORT CHO VITE SERVER            o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+o_o_o_o_o_o_o_o_o_o_o_o_o_o_o                      © 2026 GIÁO.LÀNG                     o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+
+
+📌 CÁCH 1 (CHUẨN NHẤT – NÊN DÙNG): vite.config.js                                             
+→ Mở file vite.config.js, chỉnh thông tin như bên dưới
+
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3000,
+    strictPort: true
+  }
+});
+
+→ port: 3000 → chạy ở http://localhost:3000
+→ strictPort: true → nếu port bận thì báo lỗi, không tự nhảy sang port khác
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+📌 CÁCH 2 (NHANH – TẠM THỜI): qua lệnh CLI                                             
+→ Chỉ có hiệu lực cho lần chạy hiện tại
+→ Không lưu vào project
+→ Dùng để test nhanh, không dùng lâu dài.
+
+>_ npm run dev -- --port 3000
+>_ npx vite --port 3000
+
+
+
+***********************************************************************************************************************
+                                  ✨ © 2026 GIÁO.LÀNG | Chúc bạn code React vui vẻ! ✨
+***********************************************************************************************************************

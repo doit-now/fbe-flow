@@ -1,0 +1,246 @@
+© 2026 GIÁO.LÀNG
+
+o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+o_o_o_o_o_o_o_o_o_o_o_o_o_o_o                                                           o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+ o_o_o_o_o_o_o_o_o_o_o_o_o_o_o        ⚛️ TẠO PROJECT REACT – CÁC LỆNH PHỔ BIẾN         o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+o_o_o_o_o_o_o_o_o_o_o_o_o_o_o                      © 2026 GIÁO.LÀNG                     o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o_o
+
+
+
+***********************************************************************************************************************
+****************        🟢 LỆNH MỚI – KHUYẾN NGHỊ DÙNG (Vite – nhanh, nhẹ, chuẩn hiện nay)          ******************
+***********************************************************************************************************************
+
+📌 React + JavaScript                                              
+→ Tạo project React dùng JavaScript | Nhanh, nhẹ, dùng nhiều nhất hiện nay
+
+>_ npm create vite@latest my-app -- --template react
+
+   HOẶC viết gọn hơn:
+
+>_ npm create vite@latest my-app --template react
+
+📌 React + TypeScript                                              
+→ Tạo project React dùng TypeScript | Chuẩn cho dự án thực tế, enterprise
+
+>_ npm create vite@latest my-app -- --template react-ts
+
+   HOẶC viết gọn hơn:
+
+>_ npm create vite@latest my-app --template react-ts
+
+--------------------------------------------------
+📌  Sau khi tạo xong (bắt buộc gõ): 
+
+>_ cd my-app                      
+>_ npm install
+>_ npm run dev
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+📌 GHI NHỚ NHANH – KHÁI NIỆM & LỆNH (STYLE ĐỜI THƯỜNG + KỸ THUẬT)                                         ------------
+-----------------------------------------------------------------------------------------------------------------------
+
+→ package.json   = thực đơn
+→ npm install    = đi chợ
+→ npm run dev    = nấu thử
+→ npm run build  = đóng gói đem bán
+
+--------------------------------------------------
+
+🧺 package.json = danh sách nguyên liệu + hộp công cụ, đồ nghề
+→ LÀ file khai báo tên thư viện + version cần cho:
+  • dev (viết code)
+  • build (đóng gói)
+  • run (chạy app)
+
+--------------------------------------------------
+
+🛒 npm install = đi chợ mua nguyên liệu + chuẩn bị đầy đủ đồ nghề cho project
+→ đọc file package.json
+→ tải thư viện cần cho dev / build / run từ npm registry (dependencies, devDependencies)
+→ lưu vào thư mục node_modules!!!
+→ tạo package-lock.json để khóa phiên bản
+
+→ KHÔNG chạy npm install → thiếu nguyên liệu & đồ nghề!!!
+→ Project KHÔNG chạy được
+
+--------------------------------------------------
+
+📦 dependencies = nguyên liệu để “món ăn chạy được”, bàn bày đồ ăn, phòng ăn
+→ thư viện cần khi app chạy thật
+→ dùng cho React runtime / browser runtime
+→ code của chính dependencies cũng có mặt trong bundle sau build
+
+--------------------------------------------------
+
+🧰 devDependencies = dụng cụ nấu + chế biến trong bếp
+→ chỉ cần khi viết code (dev) và build project
+→ KHÔNG cần nữa khi app đã build xong và chạy thật
+→ code dev tạo ra (JSX / TSX) chỉ có ý nghĩa trước build
+
+--------------------------------------------------
+
+📦 node_modules = nguyên liệu + đồ nghề đã mua về
+→ thư mục chứa toàn bộ thư viện đã tải cho dev / build / run, nhà bếp, bàn chế biến đồ ăn bày full nguyên vật liệu, đồ làm bếp. Có thêm cả bàn bày thành phẩm để ăn thử (run)
+→ rất nặng
+→ KHÔNG commit lên git!!! 
+→ Có thể tải lại bất kì khi nào bởi lệnh npm install
+
+--------------------------------------------------
+
+>_ cd my-app
+
+→ đi vào căn bếp / nhà hàng vừa tạo
+→ chuyển terminal vào đúng thư mục project
+→ các lệnh npm phía sau phải chạy tại đây
+
+--------------------------------------------------
+
+>_ npm install 
+
+→ đi chợ + sắp xếp nguyên liệu & đồ nghề
+→ đọc package.json
+→ tải dependencies + devDependencies
+→ lưu vào node_modules
+→ tạo package-lock.json
+→ không chạy lệnh này → project KHÔNG chạy được!!!
+
+--------------------------------------------------
+
+>_ npm run dev
+
+→ nấu thử trong bếp, ăn thử trong bếp
+→ chạy app ở môi trường dev
+→ bật dev server (Vite / CRA)
+→ build code tạm thời vào RAM
+→ mở web tại http://localhost:xxxx
+→ sửa code là reload ngay (HMR)
+
+--------------------------------------------------
+
+>_ npm run build
+
+→ đóng hộp món ăn đem đi ship
+→ build app thành file JS/CSS tĩnh. 
+→ sau khi build, kết quả sản phẩm sẽ nằm trong thư mục /dist (đối với Vite). Thư mục /dist sẵn sàng để "ship" lên server
+→ đóng gói để deploy / đưa lên server thật
+
+--------------------------------------------------
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+📌 GHI NHỚ NHANH!!!!!! dependencies vs devDependencies (gắn với npm install)                                ---------
+----------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------
+
+📌 dependencies : thư viện cần khi “chạy thật” (runtime) và khi deploy
+→ 🚀 cần khi chạy ứng dụng (run)
+→ 🚀 cần khi deploy lên server
+→ 📦 code trong dependencies CÓ mặt trong bundle sau build
+→ 🌐 code JS của app dev viết sau khi build chạy trên React runtime + JS runtime của trình duyệt
+
+📦 2 thư viện React core cần lúc run app:
+  ├─ 📦 react
+  │   → lõi React (component, state, hooks…)
+  └─ 📦 react-dom
+      → gắn React vào DOM để hiển thị UI trong trình duyệt
+
+--------------------------------------------------
+
+📌 devDependencies: các công cụ cần khi dev và khi build. 
+→ ✍️ dùng khi dân dev viết code (dev)
+→ 🏗️ dùng khi build project
+→ ❌ KHÔNG cần nữa sau khi app đã build xong và chạy thật
+
+→ ⛔ code dev viết (JSX, TSX…) KHÔNG chạy trực tiếp trên trình duyệt
+→ 🧠 code dev chỉ có ý nghĩa ở giai đoạn dev, trước build
+→ 🧪 khi chạy `npm run dev` :
+     code dev được build tạm thời vào RAM
+     và chạy trên dev server
+
+🧰 Các devDependencies hay dùng cho giai đoạn dev:
+  ├─ 🧰 vite (hoặc react-scripts trong CRA)
+  │   → chạy dev server, build, HMR (tự reload)
+  ├─ 🧰 @vitejs/plugin-react
+  │   → hiểu JSX / TSX, hỗ trợ React khi build
+  └─ 🧰 tool build (esbuild / rollup / …)
+      → “dịch” JSX/TS → JS, đóng gói tối ưu
+
+
+
+***********************************************************************************************************************
+ ****************                                       🔵 DÙNG YARN                                  ****************
+***********************************************************************************************************************
+
+📌 React + JavaScript (Vite)                                       
+>_ yarn create vite my-app --template react
+
+📌 React + TypeScript (Vite)                                      
+>_ yarn create vite my-app --template react-ts
+
+
+📌 Sau khi tạo xong (bắt buộc):
+>_ cd my-app
+>_ yarn install
+>_ yarn dev
+
+
+
+***********************************************************************************************************************
+ ****************                                     🟣 DÙNG PNPM (Nhanh & Tiết kiệm)                ****************
+***********************************************************************************************************************
+
+📌 React + JavaScript (Vite)                                       
+>_ pnpm create vite my-app --template react
+
+📌 React + TypeScript (Vite)                                      
+>_ pnpm create vite my-app --template react-ts
+
+
+📌 Sau khi tạo xong (bắt buộc):
+>_ cd my-app
+>_ pnpm install
+>_ pnpm dev
+
+
+
+***********************************************************************************************************************
+ ***************                 ⚠️ LỆNH CŨ (Create React App — CRA) — ĐÃ NGƯNG PHÁT TRIỂN             ***************
+***********************************************************************************************************************
+
+📌 React + JavaScript                                              
+>_ npx create-react-app my-app
+
+→ Cách cũ, nhiều tutorial vẫn dùng
+→ Chậm hơn, ít được khuyến nghị cho project mới
+→ ⚠️ Đã deprecated - không nên dùng nữa!
+
+📌 React + TypeScript                                              
+>_ npx create-react-app my-app --template typescript
+
+→ CRA + TypeScript
+→ Gặp trong tài liệu cũ / khóa học cũ
+→ ⚠️ Đã deprecated - không nên dùng nữa!
+
+
+
+***********************************************************************************************************************
+ ***************                                     📚 TÀI LIỆU THAM KHẢO                             *************** 
+***********************************************************************************************************************
+
+🔗 Vite Official: https://vitejs.dev/
+🔗 React Official: https://react.dev/
+🔗 Create React App (archived): https://create-react-app.dev/
+
+
+
+***********************************************************************************************************************
+                                  ✨ © 2026 GIÁO.LÀNG | Chúc bạn code React vui vẻ! ✨
+***********************************************************************************************************************
