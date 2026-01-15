@@ -139,7 +139,7 @@ V. GIẢI NGỐ VỀ HÀM - FUNCTION TRONG JAVASCRIPT
 function tênHàm(tham số nếu có, cách nhau bằng dấu phẩy nếu nhiều tham số) {
   nhóm lệnh code bằng ngôn ngữ JS nằm ở đây; 
   return giá-trị-trả-về; 
-}
+} 
 
 - CHO HÀM 1 NICK-NAME KHÁC
 
@@ -262,7 +262,7 @@ const nick = (các tham số hàm) => { code thân hàm - body of function, impl
   const f = r => { return 3.14 * r * r; } 
 
 2. ĂN BỚT PHẦN THÂN HÀM 
-- NẾU THÂN HÀM CÓ NHIỀU HƠN 1 DÒNG LỆNH, TỪ 2 LỆNH TRỞ LÊN, GIỮ NGUYÊN
+- NẾU THÂN HÀM CÓ NHIỀU HƠN 1 DÒNG LỆNH, TỪ 2 LỆNH TRỞ LÊN, GIỮ NGUYÊN CẶP { }
 - NẾU THÂN HÀM CHỈ CÓ DUY NHẤT 1 LỆNH; THÌ BỎ CẶP NGOẶC NHỌN, BỎ LUÔN CẢ CHỮ RETURN;
 
 const f = r => { return 3.14 * r * r; } 
@@ -270,6 +270,175 @@ const f = r => { return 3.14 * r * r; }
 const f = r => 3.14 * r * r;  //EXPRESSION HÀM TỰA NHƯ 1 BIỂU THỨC!!!
 
 >>>>> JAVA, C# CÙNG CÁCH THỨC!!!!!!!!!!!!!!!!!!!!
+
+
+VI. ỨNG DỤNG CỦA ARROW FUNCTION - HÀM CALLBACK - HÀM TRUYỀN VÀO HÀM
+- ARROW FUNCTION HAY ĐC DÙNG LÀM THAM SỐ CHO HÀM KHÁC, ĐỂ GIA TĂNG KHẢ NĂNG XỬ LÍ CỦA HÀM KHÁC, KHIẾN HÀM KHÁC TRỞ NÊN LINH HOẠT THEO MỌI BỐI CẢNH, TÌNH HUỐNG
+
+-> NGOÀI ĐỜI: 
+   BÀ CHỦ QUÁN PHỞ, QUÁN HỦ TÍU PHỤC VỤ TÔ PHỞ (HÀM CHÍNH) THEO NHU CẦU THỰC KHÁC
+   
+   "CHO EM TÔ PHỞ"  -> KO CÓ NHU CẦU RIÊNG
+
+   LÀM-TÔ-PHỞ()  -> VIẾT HÀM KIỂU NÀY, THÌ KHÁCH NÀO CX ĐC PHỤC VỤ TÔ PHỞ GIỐNG
+                    NHAU: NƯỚC LÈO CHÚT BÉO, VÁNG MỠ, HÀNH, NGÒ, TIÊU...
+
+   "CHO EM TÔ PHỞ NƯỚC TRONG"                      -> NHU CẦU RIÊNG
+   "CHO EM TÔ PHỞ NƯỚC TRONG, KO HÀNH"             -> NHU CẦU RIÊNG
+   "CHO EM TÔ PHỞ KO HÀNH"
+   "CHO EM TÔ HỦ TÍU KO HẸ, KO GAN"
+   CÂU DẠNG NÀY VÔ SỐ TỔ HỢP TUỲ RAU, GIA VỊ, NƯỚC, THỊT: TÁI, GÂN, NẠM...
+   
+BÍ KÍP PHÍA SAU: TRONG TAY CHỦ QUÁN CÓ NHIỀU DATA: GIA VỊ, NƯỚC, THỊT...
+                 PHỤC VỤ THEO NHU CẦU BÊN NGOÀI - THỰC KHÁCH ĐƯA VÀO
+                 MÀ KO CẦN PHỤC VỤ CHUẨN AI CX GIỐNG AI
+
+   LÀM-TÔ-PHỞ()  THAY BẰNG
+   LÀM-TÔ-PHỞ(NHU CẦU RIÊNG LÀ GÌ NÓI ĐI!!!!!!!!!)
+              ĐOẠN TEXT, HAY LÀ...
+
+-> THỰC TẾ LẬP TRÌNH
+   1 HÀM NÓ CÓ RẤT NHIỀU DATA, NHƯNG NÓ CHƯA BIẾT NÊN LÀM GÌ VỚI ĐỐNG DATA NÀY
+   NÓ NÓI VỚI BÊN NGOÀI: TỚ CUNG CẤP DỊCH VỤ TRẢ VỀ DATA THEO NHU CẦU
+   - CÁC BẠN CỨ NÓI NHU CẦU ĐI, TỚ TRẢ DATA VỀ THEO NHU CẦU CỦA BẠN, Y CHANG TÔ 
+     PHỞ ĐÃ ĐỘ RIÊNG
+ 
+   - TỚ CÓ RAU, NƯỚC LÈO / NƯỚC DÙNG, THỊT CÁC LOẠI (TÁI, NẠM, GẦU, GÂN, XÍ 
+     QUÁCH)  => NÓI NHU CẦU TRÊN ĐÁM VẬT LIỆU NÀY, TỚ ĐƯA TÔ PHỞ CUSTOMZED
+
+  - TỚ CÓ DATA ĐA DẠNG LUÔN => BẠN NÓI NHU CẦU XỬ LÍ TRÊN DATA, TỚ TRẢ VỀ CHO
+
+  - TỚ LÀ HÀM SERVICE, HÀM PHỤC VỤ, BẠN ĐƯA VÀO NHU CẦU!!!!!!!!!!!!!!!!!!!!!!!!!
+
+-> CHALLENGE THỰC HÀNH
+  - CÓ 1 MẢNG SỐ  const arr = [5, 10, 15, 20, 2, 4, 6, 8, 10, 1, 3, 5, 7, 9];
+
+  - HÃY VIẾT 1 HÀM TRẢ VỀ 1 MẢNG SỐ NGUYÊN THEO NHU CẦU BẤT KÌ. BẤT KÌ NÀY LÀ GÌ? CÒN TRONG TƯƠNG LẠI. 
+    VÍ DỤ: HÃY TRẢ VỀ CÁC SỐ CHẴN
+           HÃY TRẢ VỀ SỐ LẺ
+           HÃY TRẢ VỀ SỐ CHIA HẾT 5
+           HÃY TRẢ VỀ NÓ ĐC BÌNH PHƯƠNG LÊN
+           HÃY TRẢ VỀ NÓ MỖI PHẦN TỬ BỊ CHIA 2
+           ...
+           CÒN NỮA NHEN
+
+   THIẾT KẾ HÀM PHÙ HỢP NHU CẦU HIỆN TẠI VÀ TƯƠNG LAI?????????????
+   NHU CẦU THAY ĐỔI, HÀM KO CẦN SỬA CODE, MÀ VẪN ĐÁP ỨNG NHU CẦU => HÀM TRUYỀN VÀO HÀM
+                                                                    LÀ ĐÁP ÁN
+                                                                    LẬP TRÌNH HÀM BẮT ĐẦU
+                                                                    FUNCTIONAL PROGRAMMING &
+                                                                    CALLBACK FUNCTION!!!!!!!!!
+
+
+-> VIẾT HÀM TRUYỀN THỐNG, 1 HÀM RETURN BÊN TRONG HÀM IF CÁC TÌNH HUỐNG => Y CHANG QUÁN PHỞ
+   PHỤC VỤ TÔ ĐỒNG NHẤT
+-> HÀM TRUYỀN THỐNG, IF BÊN TRONG, MAI MỐT THÊM NHU CẦU MỚI, SỬA CODE!!!!!!!!!!!!!
+
+-> CÁCH TIẾP CẬN KHÁC: HÀM CÓ DATA, NHƯNG NHỜ BÊN NGOÀI ĐƯA VÀO NHU CẦU, KO CHỦ ĐỘNG IF BÊN TRONG
+   CHẤP TẤT CẢ CÁC LOẠI NHU CẦU
+
+
+const f = function getArrayOnDemand(fOut) {
+
+   const arr = [5, 10, 15, 20, 2, 4, 6, 8, 10, 1, 3, 5, 7, 9];
+
+   const result = []; //mảng rỗng chờ điền vô theo nhu cầu xử lí bên ngoài đưa vào   
+
+   //return 1 mảng mới từ mảng cũ: mảng số chẵn, mảng số lẻ, mảng đứa > 10, mảng mỗi đứa bị / 2...
+   //nhu cầu này vô số kể
+   //if là toang!!!!!!!!!!, vì mai mốt thêm yc là lại sửa hàm!!!
+   
+   for(let i = 0; i < arr.length; i++) {
+      const element = fOut(arr[i]);  //gửi phần tử thứ [i] cho hàm bên ngoài fOut(?)
+                                     //hàm fOut(?) trả về cho mình, nơi đây 1 con số khác
+                                     //lưu nó vào element
+      result.push(element);       
+   } 
+   return result;
+}
+
+
+//xài: trả về cho tui các số đc bình phương
+         [5,   10,  15,  20, 2,  4,  6,  8,  10, 1, 3,  5,  7,  9];
+         [25, 100, 225, 400, 4, 16, 36, 64, 100, 1, 9, 25, 49, 81];
+
+//VIẾT THẬN TRỌNG, LÀM HÀM LẺ TRẢ VỀ BÌNH PHƯƠNG CỦA 1 CON SỐ 
+
+function double(x) {
+   return x * x;
+}
+
+const result = f(double);
+console.log(result);
+
+
+VII. DESTRUCTURING - PHÂN RÃ OBJECT VÀ PHÂN RÃ MẢNG
+> OBJECT VÀ ARRAY CHỨA TRONG NÓ NHIỀU THÔNG TIN NHỎ HƠN
+
+1. MẢNG
+> VÍ DỤ: MẢNG LÀ TẬP HỢP CỦA NHIỀU BIẾN, NHIỀU GIÁ TRỊ, THỐNG NHẤT QUA 1 TÊN GỌI
+  const arr = [5, 10, 15, 20];
+  console.log(arr); //in toàn bộ các element/phần tử  
+  console.log(arr[0]);   //lấy từng element tính từ 0
+  console.log(arr[1]);  
+
+> JS CHO PHÉP LẤY CÁC PHẦN TỬ CỦA MẢNG, GÁN VÀO CÁC BIẾN 1 CÁCH NHANH CHÓNG
+> CŨ/CHẬM/CODE DÀI
+  const e0 = arr[0];  //lấy giá trị phần tử [0] gán vào biến e1
+  const e1 = arr[1];  //lấy giá trị phần tử [1] gán vào biến e2
+  const e2 = arr[2];  //lấy giá trị phần tử [2] gán vào biến e3
+  const e3 = arr[3];  //lấy giá trị phần tử [3] gán vào biến e4
+
+  console.log(e0, e1, e2, e3);
+
+
+2. OBJECT
+> OBJECT CHỨA NHIỀU THÔNG TIN MÔ TẢ ĐẶC ĐIỂM (PROPERTY / ATTRIBUTE) CỦA 1 THỰC THỂ ĐỐI TƯỢNG NÀO ĐÓ
+  const s = { id: "SE1", name: "AN NGUYỄN", yob: 2005 }; //object 
+
+  console.log(s); //gọi toString() ngầm, mà ko có toString() thì nó in ra từ: Object
+                  //là datype của biến s
+  console.log(s.id);    //lấy từng thành phần trong object
+  console.log(s.name);  //lấy từng thành phần trong object
+  console.log(s.yob);   //lấy từng thành phần trong object
+
+> JS CHO PHÉP LẤY CÁC PROPERTY CỦA OBJECT 1 CÁCH NHANH CHÓNG THEO STYLE DESTRUCTURING
+
+  TRUYỀN THỐNG:
+  const id = s.id;
+  const name = s.name;
+  const namSinh = s.yob;
+
+  DESTRUCTURING
+  const {id, name, yob} = s;
+ 
+>>>>> CHỐT HẠ:
+- DESTRUCTURING LÀ KĨ THUẬT LẤY CÁC THÀNH PHẦN BÊN TRONG MẢNG, OBJECT GÁN VÀO BIẾN BÊN NGOÀI THẬT NHANH CHÓNG
+- CÚ PHÁP [biến ngoài, biến ngoài,...] = tên-mảng;
+          {biến ngoài, biến ngoài,...} = biến-object;
+          //với object thì biến ngoài phải trùng tên với 
+          //property của object thì mới map đc 
+- OBJECT MAP THEO PROPERTY, MẢNG THÌ THEO VỊ TRÍ
+- useState(0) -> map theo mảng //REACT
+
+RICH CLIENT        THYMELEAF: SSR 
+CSR
+
+
+
+  
+
+      
+ 
+ 
+   
+
+ 
+
+
+
+   
+
 
 
 

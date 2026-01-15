@@ -1,0 +1,71 @@
+/* Container chính cho bảng */
+.fruit-table-container {
+  padding: 20px;
+  background-color: #fff5f5; /* Màu nền hồng nhạt thanh khiết */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(214, 40, 40, 0.1); /* Đổ bóng nhẹ màu đỏ */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+/* Tiêu đề bảng phong cách Tết */
+.fruit-table-title {
+  color: #d62828; /* Đỏ điều truyền thống */
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #f8ad9d;
+  padding-bottom: 10px;
+}
+
+/* Định dạng bảng */
+.fruit-table {
+  width: 100%;
+  border-collapse: collapse; /* Gộp viền bảng */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Header của bảng */
+.fruit-table thead tr {
+  background-color: #d62828; /* Màu đỏ chủ đạo */
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Định dạng các ô header và ô dữ liệu */
+.fruit-table th, .fruit-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #f8ad9d; /* Viền màu hồng cam */
+}
+
+/* Hiệu ứng dòng xen kẽ */
+.fruit-table tbody tr:nth-of-type(even) {
+  background-color: #fff0f0;
+}
+
+/* Hiệu ứng khi di chuột qua hàng */
+.fruit-table tbody tr:hover {
+  background-color: #ffe3e3;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Bo tròn ảnh trái cây */
+.fruit-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #d62828;
+}
+
+/* Cột giá tiền */
+.price-tag {
+  color: #d62828;
+  font-weight: bold;
+}
