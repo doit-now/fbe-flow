@@ -1,0 +1,9 @@
+Tạo favicon dạng SVG, hình vuông.
+Nền màu bordeaux đậm.
+Có khung viền 3 lớp:
+– viền ngoài màu bordeaux đậm,
+– viền giữa màu trắng mảnh,
+– bên trong là nền bordeaux đặc.
+Ở giữa là chữ viết tay (handwritten / script), màu trắng, nét mảnh, bố cục cân giữa.
+Phong cách đơn giản, tinh tế, phù hợp favicon, không quá chi tiết.
+Chữ viết tay: g.l

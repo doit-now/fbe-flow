@@ -1,0 +1,42 @@
+/* =========================
+   HEADER
+   ========================= */
+
+.header {
+  background-color: #f48fb1;          /* nền hồng cánh sen */
+  margin: 20px;                        /* cách mép màn hình */
+  padding: 20px;                       /* khoảng đệm bên trong */
+  border-radius: 10px;                 /* bo góc */
+
+  box-shadow: 0 10px 15px              /* bóng đổ xuống dưới */
+              rgba(0, 0, 0, 0.4);
+
+  text-align: center;                  /* căn giữa nội dung */
+}
+
+
+/* =========================
+   MAIN CONTENT (cards area)
+   ========================= */
+
+.main {
+  margin: 20px;                        /* cách header & footer */
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+  background-color: #f48fb1;           /* cùng màu với header */
+  margin: 20px;                        /* cách mép màn hình */
+  padding: 16px;                       /* nhỏ hơn header chút */
+  border-radius: 10px;                 /* bo góc */
+
+  box-shadow: 0 -6px 12px              /* bóng hắt lên trên */
+              rgba(0, 0, 0, 0.3);
+
+  text-align: center;                  /* căn giữa chữ */
+  font-size: 14px;                     /* chữ nhỏ hơn */
+}

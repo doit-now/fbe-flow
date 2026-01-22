@@ -1,0 +1,59 @@
+/* =========================
+   CONTAINER: khung chứa card
+   ========================= */
+
+.container {
+  display: flex;                 /* dùng Flexbox để dàn card theo hàng ngang */
+  gap: 20px;                     /* khoảng cách giữa các card */
+  justify-content: center;        /* căn card ra giữa màn hình */
+  align-items: flex-start;        /* các card canh theo mép trên */
+  margin-top: 40px;              /* cách phía trên trang */
+}
+
+
+/* =========================
+   CARD: mỗi thẻ trái cây
+   ========================= */
+
+.card {
+  background-color: #f8bbd0;     /* màu nền hồng cánh sen */
+  padding: 20px;                 /* khoảng đệm bên trong card */
+  border-radius: 12px;           /* bo góc card */
+
+  box-shadow: 6px 6px 8px        /* bóng lệch phải + xuống dưới, blur nhỏ */
+              rgba(0, 0, 0, 0.35);/* màu bóng: đen, độ đậm 35% */
+
+  width: 180px;                  /* chiều rộng cố định để dàn đều */
+  text-align: center;            /* căn giữa nội dung chữ */
+}
+
+
+/* =========================
+   IMAGE: hình trái cây
+   ========================= */
+
+.card img {
+  width: 100px;                  /* độ rộng hình (ảnh co theo tỉ lệ) */
+  height: auto;                  /* giữ nguyên tỉ lệ ảnh */
+  margin-bottom: 10px;           /* cách hình với nội dung bên dưới */
+}
+
+
+/* =========================
+   TITLE: tên trái cây
+   ========================= */
+
+.card h2 {
+  font-size: 18px;               /* kích thước chữ tiêu đề */
+  margin: 8px 0;                 /* khoảng cách trên & dưới tiêu đề */
+}
+
+
+/* =========================
+   DESCRIPTION: mô tả
+   ========================= */
+
+.card p {
+  font-size: 14px;               /* chữ mô tả nhỏ hơn tiêu đề */
+  color: #333;                   /* màu chữ xám đậm, dễ đọc */
+}

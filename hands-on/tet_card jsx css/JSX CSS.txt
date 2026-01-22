@@ -1,0 +1,54 @@
+//                       STYLE VIẾT TRỰC TIẾP TRONG JSX
+//
+//1. PHẢI LÀ JS OBJECT {key: value}
+//2. ATTRIBUTE ĐỔI TỪ GẠCH NGANG THÀNH camelCase, VÍ DỤ: background-color THÀNH backgroundColor
+//3. TRUYỀN OBJECT STYLE VÀO TAG PHẢI DÙNG {object style} 
+
+
+
+//STYLE OBJECT     //////////////////////////////
+const cardStyle = {
+  backgroundColor: "#F8BBD0",
+  padding: "20px",
+  borderRadius: "12px",
+  // 👇 bóng chỉ lệch phải + xuống dưới, sát cạnh
+  boxShadow: "6px 6px 8px rgba(0,0,0,0.35)",
+};
+
+
+
+//JSX ELEMENT - PHẢI TRẢ VỀ DUY NHẤT 1 TAG CONTAINER, TAG BAO TRÙM CÁC TAG KHÁC   //////////////
+//              TRẢ VỀ NHIỀU DÒNG THÌ NHÉT VÀO NGOẶC TRÒN ()
+//              TAG BAO TRÙM CÓ THỂ DÙNG TAG RỖNG <> </> - FRAGMENT
+//              CODE JS, BIẾN JS, OBJECT JS THÌ NHÉT VÀO NGOẶC {}    
+   
+const card = (
+  <div style={cardStyle}>
+    <h2>🍓 Fruit Card</h2>
+    <p>Fresh & Healthy</p>
+  </div>
+);
+
+
+
+//STYLE OBJECT - THÙNG CHỨA DIV CHỨA NHIỀU CARD    //////////////////////////////
+const containerStyle = {
+  display: "flex",
+  gap: "20px",
+  justifyContent: "center"
+};
+
+
+
+//JSX ELEMENT - PHẢI TRẢ VỀ DUY NHẤT 1 TAG CONTAINER, TAG BAO TRÙM CÁC TAG KHÁC   //////////////
+//              THÙNG DIV CONTAINER CHỨA BÊN TRONG 5 TAG JSX KHÁC, LÀ 5 BIẾN {card}
+const container = (
+  <div style={containerStyle}>
+    {card}
+    {card}
+    {card}
+    {card}
+    {card}
+  </div>
+);
+
