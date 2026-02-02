@@ -1,0 +1,76 @@
+/* ================== STYLE CHUNG ================== */
+
+body {
+  font-family: Arial, sans-serif;       /* Font cơ bản */
+  padding: 20px;                        /* Lề trang */
+  line-height: 1.6;                     /* Giãn dòng */
+}
+
+button {
+  padding: 10px 14px;                   /* Kích thước nút */
+  border: none;                         /* Bỏ viền */
+  border-radius: 6px;                   /* Bo góc nhẹ */
+  cursor: pointer;                      /* Tay click */
+}
+
+/* ================== NÚT MỞ MODAL ================== */
+
+#openModal {
+  background: #1976d2;                  /* Màu xanh */
+  color: white;                         /* Chữ trắng */
+  margin-top: 10px;
+}
+
+/* ================== MODAL OVERLAY ================== */
+
+.modal {
+  display: none;                        /* Ẩn ban đầu */
+  position: fixed;                      /* Phủ theo màn hình */
+  inset: 0;                             /* Full viewport */
+  background: rgba(0, 0, 0, 0.5);        /* Nền đen mờ */
+  
+  justify-content: center;              /* Căn giữa ngang */
+  align-items: center;                  /* Căn giữa dọc */
+
+  cursor: pointer;                      /* Click nền để đóng */
+}
+
+/* ================== HỘP MODAL ================== */
+
+.modal-content {
+  position: relative;                   /* Mốc cho nút X */
+  width: 380px;
+  background: #f8bbd0;                  /* Hồng */
+  padding: 30px 20px 20px;              /* Trên lớn hơn */
+  border-radius: 12px;
+  text-align: center;
+  cursor: default;                      /* Không click-to-close */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* ================== NÚT X HÌNH VUÔNG ================== */
+
+.close-x {
+  position: absolute;                   /* Đặt trong modal */
+  top: 10px;
+  right: 10px;
+
+  width: 32px;                          /* Hình vuông */
+  height: 32px;
+  background: white;                    /* Nền trắng */
+  border: 1px solid #ccc;               /* Viền xám */
+  border-radius: 4px;                   /* Bo góc nhẹ */
+
+  font-size: 16px;                      /* Chữ X */
+  font-weight: bold;
+  color: #333;
+
+  display: flex;                        /* Flex để */
+  align-items: center;                  /* căn giữa chữ */
+  justify-content: center;
+}
+
+.close-x:hover {
+  background: #f44336;                  /* Hover đỏ */
+  color: white;
+}

@@ -1,0 +1,69 @@
+/* ================== TRANG ================== */
+
+.page {
+  font-family: Arial, sans-serif;     /* Font cơ bản */
+  padding: 20px;                      /* Lề trang */
+  line-height: 1.6;                   /* Giãn dòng */
+}
+
+/* ================== NÚT MỞ MODAL ================== */
+
+.openBtn {
+  padding: 10px 14px;                 /* Kích thước nút */
+  border: none;                       /* Bỏ viền */
+  border-radius: 6px;                 /* Bo góc nhẹ */
+  cursor: pointer;                    /* Tay click */
+  background: #1976d2;                /* Màu xanh */
+  color: white;                       /* Chữ trắng */
+}
+
+/* ================== OVERLAY ================== */
+
+.modalOverlay {
+  position: fixed;                    /* Phủ theo màn hình */
+  inset: 0;                           /* Full viewport */
+  background: rgba(0, 0, 0, 0.5);      /* Nền đen mờ */
+
+  display: flex;                      /* Dùng flex */
+  justify-content: center;            /* Căn giữa ngang */
+  align-items: center;                /* Căn giữa dọc */
+}
+
+/* ================== HỘP MODAL ================== */
+
+.modalContent {
+  position: relative;                 /* Mốc cho nút X */
+  width: 380px;                       /* Độ rộng hộp */
+  background: #f8bbd0;                /* Nền hồng */
+  padding: 30px 20px 20px;            /* Chừa chỗ nút X */
+  border-radius: 12px;                /* Bo góc */
+  text-align: center;                 /* Căn chữ giữa */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* ================== NÚT X ================== */
+
+.closeX {
+  position: absolute;                 /* Dính góc phải trên */
+  top: 10px;
+  right: 10px;
+
+  width: 32px;                        /* Hình vuông */
+  height: 32px;
+
+  background: white;                  /* Nền trắng */
+  border: 1px solid #ccc;             /* Viền xám */
+  border-radius: 4px;                 /* Bo góc nhẹ */
+
+  display: flex;                      /* Căn giữa chữ */
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.closeX:hover {
+  background: #f44336;
+  color: white;
+}

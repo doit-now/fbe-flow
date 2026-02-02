@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modal đơn giản</title>
+
+  <!-- Kết nối CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================== NỘI DUNG TRANG ================== -->
+
+  <h1>Trang demo Modal</h1>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+  <!-- Nút mở modal -->
+  <button id="openModal">View detail</button>
+
+  <!-- ================== MODAL ================== -->
+
+  <!--
+    modal          : lớp phủ nền mờ
+    modal-content  : hộp nội dung
+  -->
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modalContent">
+
+      <!-- Nút đóng X (hình vuông, góc phải trên) -->
+      <button class="close-x" id="closeX">X</button>
+
+      <h2>🎉 Chúc Mừng Năm Mới</h2>
+      <h2>🎉 Bính Ngọ 2026</h2>
+
+      <p>🍎 Cầu</p>
+      <p>🍊 Sung</p>
+      <p>🥥 Dừa</p>
+      <p>🥭 Đủ</p>
+      <p>🍍 Xoài</p>
+
+    </div>
+  </div>
+
+  <!-- ================== JAVASCRIPT ================== -->
+  <script>
+    // Lấy các phần tử cần thao tác
+    const openBtn      = document.getElementById("openModal");
+    const modal        = document.getElementById("modal");
+    const modalContent = document.getElementById("modalContent");
+    const closeX       = document.getElementById("closeX");
+
+    // Mở modal
+    function openModal() {
+      modal.style.display = "flex";
+    }
+
+    // Đóng modal
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    // Click nút View detail -> mở modal
+    openBtn.onclick = function () {
+      openModal();
+    };
+
+    // Click nút X -> đóng modal
+    closeX.onclick = function () {
+      closeModal();
+    };
+
+/*
+    // Click nền mờ (overlay) -> đóng modal
+    modal.onclick = function () {
+      closeModal();
+    };
+
+    // Click vào hộp nội dung -> không đóng
+    modalContent.onclick = function (e) {
+      e.stopPropagation();
+    };
+*/
+  </script>
+
+</body>
+</html>
